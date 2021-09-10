@@ -6,3 +6,8 @@
   - Typescript
   - Testing for NodeJS and ReactJS
 - Each branch contains feature
+
+## Branches
+
+- feature/staticAnalysisTesting
+  - contains config for Eslint,TypeScript,Prettier
