@@ -1,4 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run validate 
+yarn tsc 
+yarn lint-staged
+yarn build
