@@ -11,3 +11,7 @@
 
 - feature/staticAnalysisTesting
   - contains config for Eslint,TypeScript,Prettier
+
+## vsCode Extensions
+
+- eslint => This will show Me errors of eslint while writting the Code

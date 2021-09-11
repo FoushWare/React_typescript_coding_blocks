@@ -1,21 +1,16 @@
 {
-	"parserOptions": {
+  "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
   },
-	"rules":{
-		// if i had typo in type like typeing [strng] not [string]
-		"valid-typeof":"error",
-		"strict":["error","never"],
-		"no-unsafe-negation": "error",
-    "no-unused-vars": "error",
-    "no-unexpected-multiline": "error",
-    "no-undef": "error"
-	},
-	"env":{
-		"browser":true
-	}
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "strict": ["error", "never"]
+  },
+  "env": {
+    "browser": true
+  }
 }
