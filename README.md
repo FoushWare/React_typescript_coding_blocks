@@ -11,6 +11,7 @@
 
 - feature/staticAnalysisTesting
   - contains config for Eslint,TypeScript,Prettier
+  - husky precomit
 
 ## vsCode Extensions
 
