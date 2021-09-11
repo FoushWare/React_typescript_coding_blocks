@@ -1,28 +1,30 @@
 {
-	"name": "react_typescript",
-	"version": "1.0.0",
-	"scripts": {
-		"build": "babel src --out-dir dist",
-		"lint": "eslint --ignore-path .gitignore ."
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/FoushWare/React_typescript_coding_blocks.git"
-	},
-	"keywords": [
-		"Typescript",
-		"testing"
-	],
-	"author": "Ahmed fouad (Foushware)",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/FoushWare/React_typescript_coding_blocks/issues"
-	},
-	"homepage": "https://github.com/FoushWare/React_typescript_coding_blocks#readme",
-	"devDependencies": {
-		"@babel/cli": "^7.15.4",
-		"@babel/core": "^7.15.5",
-		"@babel/preset-env": "^7.15.6",
-		"eslint": "^7.32.0"
-	}
+  "name": "react_typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoushWare/React_typescript_coding_blocks.git"
+  },
+  "keywords": [
+    "Typescript",
+    "testing"
+  ],
+  "author": "Ahmed fouad (Foushware)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FoushWare/React_typescript_coding_blocks/issues"
+  },
+  "homepage": "https://github.com/FoushWare/React_typescript_coding_blocks#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.0"
+  }
 }
