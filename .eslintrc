@@ -6,13 +6,14 @@
       "jsx": true
     }
   },
-  "extends": ["eslint:recommended", "eslint-config-prettier", "prettier"],
+  "extends": ["eslint:recommended", "eslint-config-prettier"],
   "rules": {
     "strict": ["error", "never"]
   },
   "env": {
     "browser": true
   },
+  // overrides eslint to work with typescript
   "overrides": [
     {
       "files": "**/*.+(ts|tsx)",
@@ -23,7 +24,8 @@
       "plugins": ["@typescript-eslint/eslint-plugin"],
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended", // removes redundant warnings between TS & ESLint
-        "plugin:@typescript-eslint/recommended" // rules specific to typescript, e.g., writing interfaces
+        "plugin:@typescript-eslint/recommended", // rules specific to typescript, e.g., writing interfaces
+        "prettier"
         // "eslint-config-prettier/@typescript-eslint" // ensure rule set doesn't conflict with prettier for TS files too
       ]
     }
