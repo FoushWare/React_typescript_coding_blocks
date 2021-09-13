@@ -16,4 +16,4 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   on:
-    branch: feature/jest
+    branch: master
