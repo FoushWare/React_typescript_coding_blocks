@@ -1,9 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path')
+const webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		main: ["@babel/polyfill", './src/app.js']
+		main: ["@babel/polyfill", './src/index.js']
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -15,11 +16,27 @@ module.exports = {
 		},
 		compress: true,
 		port: 9000,
+		hot: true
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'foushware awesome webpack sideproject'
-		})
+			template: './public/index.html',
+		}),
+		new webpack.ProvidePlugin({
+			// This is a Replacement of long imports in every file 
+			/*
+				import ReactDOM from ‘react-dom’
+				import _ from 'lodash'
+				import $ from 'jquery'
+				import cssModule from 'react-css-modules'
+			*/
+			"React": "react",
+			'ReactDOM': 'react-dom',
+			'$': 'jquery',
+			'_': 'lodash',
+
+		}),
+
 	],
 	module: {
 		rules: [{
@@ -28,7 +45,8 @@ module.exports = {
 			use: {
 				loader: 'babel-loader',
 				options: {
-					presets: ['@babel/preset-env']
+					presets: ['@babel/preset-env', '@babel/preset-react'],
+					plugins: ['@babel/plugin-transform-runtime']
 				}
 			}
 		},
