@@ -19,7 +19,25 @@
     create-react-app cli
   - hot reload support
 - feature/jest
+
   - config jest testing with React
+  - Adding travisci [CI] and deploy to gh-pages[github pages]
+  - hacks in jest => it uses jsdom so i can test in node envirnoment and like
+    browser dom i can run in the Test:
+
+  ```
+  console.log(window)
+  ```
+
+  and it will give me a result
+
+> I can specify with node envirnoment to run in jest
+
+```
+npm t -- --env=node
+```
+
+and this will give error for `console.log(window)`
 
 ## vsCode Extensions
 
