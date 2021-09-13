@@ -1,11 +1,10 @@
 import Component from './components/component'
 function App() {
-	return (
-		<div className="App">
-			<Component />
-
-		</div>
-	);
+  return (
+    <div className="App">
+      <Component />
+    </div>
+  )
 }
 
-export default App;
+export default App
