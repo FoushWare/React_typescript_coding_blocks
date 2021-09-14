@@ -39,6 +39,21 @@ npm t -- --env=node
 
 and this will give error for `console.log(window)`
 
+### Problems ⛔⛔⛔ and Solutions 🟢🟢🟢
+
+➡️ Running (aut-scaling-text.js) test Will give Error
+
+     ⛔Jest encountered an unexpected token
+     The Problem was importing css file as node module but it's css file
+
+🟢 -> Solution: add mocks in jest.config.js
+
+```
+ moduleNameMapper: {
+    '\\.css$': require.resolve('./test/style-mock.js'),
+  },
+```
+
 ## vsCode Extensions
 
 - eslint => This will show Me errors of eslint while writting the Code
