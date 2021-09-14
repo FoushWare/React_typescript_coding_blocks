@@ -39,11 +39,11 @@ npm t -- --env=node
 
 and this will give error for `console.log(window)`
 
-### Problems ⛔⛔⛔ and Solutions 🟢🟢🟢
+### Start Problems ⛔⛔⛔ and Solutions 🟢🟢🟢
 
 ➡️ Running (aut-scaling-text.js) test Will give Error
 
-     ⛔Jest encountered an unexpected token
+     ⛔->Jest encountered an unexpected token
      The Problem was importing css file as node module but it's css file
 
 🟢 -> Solution: add mocks in jest.config.js
@@ -53,6 +53,56 @@ and this will give error for `console.log(window)`
     '\\.css$': require.resolve('./test/style-mock.js'),
   },
 ```
+
+⛔ -> with using mock-module.js for mocking css file 👔 if i use the debug
+method from render [react-testing-lib] ... class will not appear .. and i want
+to make things to the class in runtime
+
+```
+test('renders', () => {
+	const { debug } = render(<AutoScalingText />)
+	debug()
+})
+
+--outputs
+<body>
+        <div>
+          <div
+            data-testid="total"
+            style="transform: scale(1,1);"
+          />
+        </div>
+      </body>
+
+```
+
+🟢 -> solution : is to use package called identity-obj-proxy ... And in
+jest.config.js
+
+```
+ moduleNameMapper: {
+    '\\.module\\.css$': 'identity-obj-proxy', // to make className appear in the test
+    '\\.css$': require.resolve('./test/style-mock.js'), // mocking css file because it's render as module not css file
+  },
+
+  ---output
+
+  <body>
+        <div>
+          <div
+            class="autoScalingText"
+            data-testid="total"
+            style="transform: scale(1,1);"
+          />
+        </div>
+      </body>
+
+
+```
+
+### End Problems ⛔⛔⛔ and Solutions 🟢🟢🟢
+
+- snapshot for the serialize version of dom node
 
 ## vsCode Extensions
 
