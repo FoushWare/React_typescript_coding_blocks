@@ -6,4 +6,7 @@ module.exports = {
     '\\.module\\.css$': 'identity-obj-proxy', // to make className appear in the test
     '\\.css$': require.resolve('./test/style-mock.js'), // mocking css file because it's render as module not css file
   },
+  snapshotSerializers: [
+    '@emotion/jest/serializer' /* if needed other snapshotSerializers should go here */,
+  ],
 }

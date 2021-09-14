@@ -100,6 +100,15 @@ jest.config.js
 
 ```
 
+⛔ -> emotion styles not shown in snapshot serialize
+
+🟢 -> Add jest-emotion
+
+```
+  snapshotSerializers: ['jest-emotion']
+
+```
+
 ### End Problems ⛔⛔⛔ and Solutions 🟢🟢🟢
 
 - snapshot for the serialize version of dom node
@@ -108,3 +117,7 @@ jest.config.js
 
 - eslint => This will show Me errors of eslint while writting the Code
 - prettier => for code format
+
+## React Main libs
+
+- emotion it's like style-component
