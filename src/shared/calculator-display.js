@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types'
 import AutoScalingText from './auto-scaling-text'
 import {getFormattedValue} from './utils'
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import {jsx, css} from '@emotion/react'
 
 function CalculatorDisplay({value, ...props}) {
   const formattedValue = getFormattedValue(
@@ -11,9 +14,14 @@ function CalculatorDisplay({value, ...props}) {
   return (
     <div
       {...props}
-      css={{
-        color: 'hotpink',
-      }}
+      css={css`
+        position: 'relative',
+        color: 'white',
+        background: '#1c191c',
+        lineHeight: '130px',
+        fontSize: '6em',
+        flex: '1',
+      `}
     >
       <AutoScalingText>{formattedValue}</AutoScalingText>
     </div>
