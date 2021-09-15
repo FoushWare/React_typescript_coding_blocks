@@ -18,7 +18,10 @@
   - i created a react app using webpack 5 and babel without need for
     create-react-app cli
   - hot reload support
-- feature/jest
+- feature/jest🧪 🤠 🔭
+
+  > Note 🧨 You can remove the tests and start ... i made these tests to Test
+  > Jest configurationg with nodeJS & ReactJS
 
   - config jest testing with React
   - Adding travisci [CI] and deploy to gh-pages[github pages]
