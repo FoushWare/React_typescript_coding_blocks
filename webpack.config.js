@@ -1,13 +1,19 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
+  resolve: {
+    modules: ['node_modules', path.join(__dirname, 'src'), 'shared'],
+  },
   entry: {
-    main: ['@babel/polyfill', './src/index.js'],
+    // main: ['@babel/polyfill', './src/index.js'],
+    main: ['./src/index.js'],
   },
   output: {
-    filename: '[name].bundle.js',
+    // filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
@@ -19,17 +25,18 @@ module.exports = {
     hot: true,
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
     new webpack.ProvidePlugin({
       // This is a Replacement of long imports in every file
       /*
-				import ReactDOM from ‘react-dom’
-				import _ from 'lodash'
-				import $ from 'jquery'
-				import cssModule from 'react-css-modules'
-			*/
+        import ReactDOM from ‘react-dom’
+        import _ from 'lodash'
+        import $ from 'jquery'
+        import cssModule from 'react-css-modules'
+      */
       React: 'react',
       ReactDOM: 'react-dom',
       $: 'jquery',
@@ -51,10 +58,30 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+        ],
+        include: /\.module\.css$/,
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/,
+      },
+
+      {
         test: /\.(gif|png|jpg|jpeg|svg)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
         type: 'asset/resource',
       },
     ],
