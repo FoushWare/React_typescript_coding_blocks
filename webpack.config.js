@@ -50,10 +50,10 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
+          // options: {
+          //   presets: ['@babel/preset-env', '@babel/preset-react'],
+          //   plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-arrow-functions'],
+          // },
         },
       },
       {
@@ -64,7 +64,12 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: true,
+              // modules: true,
+              // exportLocalsConvention: "camelCase",
+              modules: {
+                mode: 'local',
+                exportLocalsConvention: 'camelCase',
+              },
             },
           },
         ],
