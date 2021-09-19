@@ -7,8 +7,8 @@ test('the clear button switches from AC to C when there is an entry', () => {
   const clearButton = getByText('AC')
 
   fireEvent.click(getByText(/3/))
-  expect(clearButton).toHaveTextContent('C')
+  expect(clearButton.textContent).toBe('C')
 
   fireEvent.click(clearButton)
-  expect(clearButton).toHaveTextContent('AC')
+  expect(clearButton.textContent).toBe('AC')
 })
