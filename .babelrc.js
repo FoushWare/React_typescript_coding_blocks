@@ -1,7 +1,7 @@
 const isTest = String(process.env.NODE_ENV) === 'test'
 
 module.exports = {
-  plugins: ['@emotion'],
+  plugins: ['@emotion', '@babel/plugin-transform-runtime'],
   presets: [
     [
       '@babel/preset-env',

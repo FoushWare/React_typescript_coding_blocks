@@ -15,12 +15,12 @@ function CalculatorDisplay({value, ...props}) {
     <div
       {...props}
       css={css`
-        position: 'relative',
-        color: 'white',
-        background: '#1c191c',
-        lineHeight: '130px',
-        fontSize: '6em',
-        flex: '1',
+        position: relative;
+        color: white;
+        background: #1c191c;
+        line-height: 130px;
+        font-size: 6em;
+        flex: 1;
       `}
     >
       <AutoScalingText>{formattedValue}</AutoScalingText>

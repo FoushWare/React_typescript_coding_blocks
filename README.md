@@ -112,6 +112,48 @@ jest.config.js
 
 ```
 
+⛔ -> the Calculator styles not applied
+
+🟢 -> changing the module exportconvension to camelcase so i can use css modules
+style with camelcase
+
+```
+ {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              // modules: true,
+              // exportLocalsConvention: "camelCase",
+              modules: {
+                mode: "local",
+                exportLocalsConvention: "camelCase",
+              }
+
+
+            },
+          },
+        ],
+        include: /\.module\.css$/,
+      },
+```
+
+```
+-> so now i can call the style
+[.calculator-keypad] like this
+
+styles.calculatorKeypad
+
+```
+
+⛔ -> Arrow function not working  
+The Reson was file `bundle.js` called twice
+
+🟢 -> i removed it from the `public/index.html`
+
 ### End Problems ⛔⛔⛔ and Solutions 🟢🟢🟢
 
 - snapshot for the serialize version of dom node
