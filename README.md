@@ -9,6 +9,14 @@
 
 - Each branch contains feature
 
+## Travis_build
+
+- branch feature/jest  
+  [![Jest Branch build status](https://app.travis-ci.com/FoushWare/React_typescript_coding_blocks.svg?token=EsqdxqGydwPtFHUFqsDb&branch=feature/jest)](https://app.travis-ci.com/FoushWare/React_typescript_coding_blocks.svg?token=EsqdxqGydwPtFHUFqsDb&branch=feature/jest)
+
+- branch master  
+   [![Jest Branch build status](https://app.travis-ci.com/FoushWare/React_typescript_coding_blocks.svg?token=EsqdxqGydwPtFHUFqsDb&branch=master)](https://app.travis-ci.com/FoushWare/React_typescript_coding_blocks.svg?token=EsqdxqGydwPtFHUFqsDb&branch=master)
+
 ## Branches
 
 - feature/staticAnalysisTesting

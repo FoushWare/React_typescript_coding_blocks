@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import CalculatorDisplay from 'calculator-display'
 import styles from './calculator.module.css'
 import React from 'react'
-console.log('Test')
-console.log(styles.calculator)
-console.log(styles.calculatorKeypad)
+// console.log('Test')
+// console.log(styles.calculator)
+// console.log(styles.calculatorKeypad)
 
 function CalculatorKey({className = '', ...props}) {
   return (
@@ -68,7 +68,7 @@ function Calculator() {
   }
 
   React.useEffect(() => {
-    console.log('first load the page ...')
+    // console.log('first load the page ...')
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
   })
@@ -125,9 +125,9 @@ function Calculator() {
   }
 
   function inputDigit(digit) {
-    console.log(
-      '🧪testing input digit because clicking keypad not doing anything',
-    )
+    // console.log(
+    //   '🧪testing input digit because clicking keypad not doing anything',
+    // )
     if (waitingForOperand) {
       setState({
         displayValue: String(digit),
