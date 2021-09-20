@@ -14,5 +14,7 @@ module.exports = {
   snapshotSerializers: [
     '@emotion/jest/serializer' /* if needed other snapshotSerializers should go here */,
   ],
-  collectCoverageFrom: ['**/src/**/*.js'],
+  collectCoverageFrom: [
+    '**/src/**/*.js',
+  ] /** include all the project files in coverage not only the test files */,
 }
