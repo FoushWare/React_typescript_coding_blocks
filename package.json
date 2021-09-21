@@ -12,10 +12,14 @@
     "prepare": "husky install",
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "test": "is-ci \"test:coverage\" \"test:watch\"",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
-    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "test": "is-ci \"test:coverage\" \"test:watch:client\"",
+    "test:coverage": "npm run test:coverage:client && npm run test:coverage:server",
+    "test:coverage:client": "jest --config test/jest.client.js --coverage",
+    "test:coverage:server": "jest --config test/jest.server.js --coverage",
+    "test:watch:client": "jest --config test/jest.client.js --watch",
+    "test:watch:server": "jest --config test/jest.server.js --watch",
+    "test:debug:client": "node --inspect-brk ./node_modules/jest/bin/jest.js --config test/jest.client.js --watch",
+    "test:debug:server": "node --inspect-brk ./node_modules/jest/bin/jest.js --config test/jest.server.js --watch",
     "setup": "npm install && npm run validate"
   },
   "repository": {
@@ -72,7 +76,8 @@
     "@emotion/react": "^11.4.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-loadable": "^5.5.0"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
