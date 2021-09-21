@@ -21,7 +21,7 @@ module.exports = {
     global: {
       statements: 31,
       branches: 18,
-      functions: 29,
+      functions: 25,
       lines: 29,
     },
     //When makeing specific rules for files respect to coverage .. it subtract it's percenge from the global setting Above
