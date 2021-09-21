@@ -11,12 +11,12 @@ before_install:
 install: echo "install happens as part of setup"
 script: npm run setup
 after_script:
-  - istanbul cover ./node_modules/jest/bin/jest --reporter lcovonly -- -R spec
-  - codecov
+  - npx codecov@3
+  # - istanbul cover ./node_modules/jest/bin/jest --reporter lcovonly -- -R spec
+  # - codecov
 env:
   - CODECOV_TOKEN='b3dd45f8-7d85-4b22-94b9-b535867be98a'
 
-# npx codecov@3
 # branches:
 # feature/jest
 # only: master
