@@ -6,9 +6,15 @@ cache:
 notifications:
   email: false
 node_js: '12'
+before_install:
+  - npm install -g codecov
 install: echo "install happens as part of setup"
 script: npm run setup
-after_script: npx codecov@3
+after_script:
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R
+    spec
+  - codecov
+# npx codecov@3
 # branches:
 # feature/jest
 # only: master
