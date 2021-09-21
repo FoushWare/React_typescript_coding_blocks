@@ -6,7 +6,7 @@ function getScale(node) {
   debugger // to make breakpoint here
   // console.log(node);
   if (!node) {
-    console.log('in here')
+    // console.log('in here')
     return 1
   }
   const parentNode = node.parentNode

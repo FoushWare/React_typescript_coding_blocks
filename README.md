@@ -28,6 +28,18 @@
   - hot reload support
 - feature/jest🧪 🤠 🔭
 
+  ```
+  🤪 You can run (server,client)(nodeENV,jsdomENV)
+  - I Made this using :
+  > projects:[] in jest config
+
+  	projects: [
+  	'./test/jest.client.js',
+  	'./test/jest.server.js'
+  ]
+
+  ```
+
   > Note 🧨 You can remove the tests and start ... i made these tests to Test
   > Jest configurationg with nodeJS & ReactJS
 
@@ -170,6 +182,12 @@ The Reson was file `bundle.js` called twice
 
 - eslint => This will show Me errors of eslint while writting the Code
 - prettier => for code format
+
+## 👀 Show all jest config
+
+```
+    npx jest --showConfig
+```
 
 ## React Main libs
 

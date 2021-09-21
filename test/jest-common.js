@@ -12,8 +12,4 @@ module.exports = {
     'shared',
     __dirname,
   ],
-
-  collectCoverageFrom: [
-    '**/src/**/*.js',
-  ] /** include all the project files in coverage not only the test files */,
 }
