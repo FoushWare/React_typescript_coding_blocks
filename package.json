@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build-babel": "babel src --extensions .js,.ts,.tsx --out-dir dist",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "lint": "jest --config test/jest.lint.js",
     "check-types": "tsc",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",

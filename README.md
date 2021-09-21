@@ -39,6 +39,14 @@
   	'./test/jest.lint.js'
   ]
 
+  ### package.json jest lint config
+
+   "jest-runner-eslint": { // Run lint for all of JS files except what in gitignore
+    "cliOptions": {
+      "ignorePath": "./.gitignore"
+    }
+  },
+
   ```
 
   > Note 🧨 You can remove the tests and start ... i made these tests to Test
