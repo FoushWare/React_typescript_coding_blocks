@@ -5,10 +5,10 @@ module.exports = {
   ] /** include all the project files in coverage not only the test files */,
   coverageThreshold: {
     global: {
-      statements: 31,
+      statements: 26,
       branches: 18,
-      functions: 25,
-      lines: 29,
+      functions: 23,
+      lines: 26,
     },
     //When makeing specific rules for files respect to coverage .. it subtract it's percenge from the global setting Above
     './src/shared/utils.js': {
