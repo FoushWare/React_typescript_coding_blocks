@@ -29,13 +29,14 @@
 - feature/jest🧪 🤠 🔭
 
   ```
-  🤪 You can run (server,client)(nodeENV,jsdomENV)
+  🤪 You can run (server,client)(nodeENV,jsdomENV) and can run eslint
   - I Made this using :
   > projects:[] in jest config
 
   	projects: [
   	'./test/jest.client.js',
   	'./test/jest.server.js'
+  	'./test/jest.lint.js'
   ]
 
   ```
