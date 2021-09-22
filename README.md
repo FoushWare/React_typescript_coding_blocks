@@ -9,6 +9,10 @@
 
 - Each branch contains feature
 
+# Github pages for this Repo
+
+https://foushware.github.io/React_typescript_coding_blocks/
+
 ## Travis_build
 
 - branch feature/jest  
