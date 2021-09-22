@@ -12,4 +12,5 @@ module.exports = {
     'shared',
     __dirname,
   ],
+  watchPlugins: ['jest-watch-select-projects'],
 }
