@@ -88,6 +88,7 @@
     ],
     "**/*.+(js|json|ts|tsx)": [
       "prettier --write",
+      "jest --findRelatedTests",
       "git add"
     ]
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './auto-scaling-text.module.css'
 // console.log(styles)
+// commits!
 function getScale(node) {
   debugger // to make breakpoint here
   // console.log(node);
