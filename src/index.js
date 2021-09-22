@@ -1,12 +1,7 @@
-import App from './App';
-//for hot reload in the dev server
-if (module.hot) {
-	module.hot.accept()
-}
+import './global.css'
+import App from './app'
 
-ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById('root')
-);
+if (module.hot) {
+  module.hot.accept()
+}
+ReactDOM.render(<App />, document.getElementById('app'))

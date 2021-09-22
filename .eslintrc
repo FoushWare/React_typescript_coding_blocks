@@ -1,4 +1,9 @@
 {
+  "settings": {
+    "react":{
+      "version":"detect"
+    }
+  },
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module",
@@ -6,12 +11,20 @@
       "jsx": true
     }
   },
-  "extends": ["eslint:recommended", "eslint-config-prettier"],
+  "extends": ["eslint:recommended", "eslint-config-prettier","plugin:react/recommended"],
   "rules": {
-    "strict": ["error", "never"]
+    "strict": ["error", "never"],
+    "no-debugger":"off"
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "jest":true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "React":true,
+    "ReactDOM":true
   },
   // overrides eslint to work with typescript
   "overrides": [
