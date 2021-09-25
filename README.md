@@ -21,16 +21,16 @@ https://foushware.github.io/React_typescript_coding_blocks/
 - branch master  
    [![Jest Branch build status](https://app.travis-ci.com/FoushWare/React_typescript_coding_blocks.svg?token=EsqdxqGydwPtFHUFqsDb&branch=master)](https://app.travis-ci.com/FoushWare/React_typescript_coding_blocks.svg?token=EsqdxqGydwPtFHUFqsDb&branch=master)
 
-## Branches
+## 🌿 Branches
 
-- feature/staticAnalysisTesting
+- 🌿 feature/staticAnalysisTesting
   - contains config for Eslint,TypeScript,Prettier
   - husky precomit
-- feature/CreateReactWithout_CRA
+- 🌿 feature/CreateReactWithout_CRA
   - i created a react app using webpack 5 and babel without need for
     create-react-app cli
   - hot reload support
-- feature/jest🧪 🤠 🔭
+- 🌿 feature/jest🧪 🤠 🔭
 
   ```
   🤪 You can run (server,client)(nodeENV,jsdomENV) and can run eslint
@@ -189,7 +189,26 @@ The Reson was file `bundle.js` called twice
 
 ### End Problems ⛔⛔⛔ and Solutions 🟢🟢🟢
 
-- snapshot for the serialize version of dom node
+## 🌿 Branches cont.
+
+- 🌿 jest/reactTestingLib
+
+  - react-dom.js - Render a React component for testing
+
+  - jest-dom.js - Use jest-dom for improved assertions
+  - dom-testing-library.js - Use dom-testing-library to write more maintainable
+    React tests ... you can retrive this idea by the example of input control
+    and i'ts label
+  - react-testing-library.js - Use react-testing-library ✅ to render and test
+    React Components .. now we can red of ❌ [reactDom and @testing-library/dom]
+  - use debug from Reacttestinglibrary
+  - eventHandler with fireEvent
+  - use ✅ user-event instead of fireEvent❌
+  - use rerender 🔂 if you want to rerender same component with different props
+  - verify the element is not rendered so not to 🚷 use
+    getBy....[label,test,etc] use queryBy...[label,test,etc]
+  - use jest-axe 🪓 for accessiblity of the form elements
+  - MSW/node for mocking http requests for isolate frontend from backend
 
 ## vsCode Extensions
 
