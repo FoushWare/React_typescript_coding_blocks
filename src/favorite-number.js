@@ -1,5 +1,4 @@
-import * as React from 'react'
-
+import React from 'react'
 // eslint-disable-next-line react/prop-types
 function FavoriteNumber({min = 1, max = 9}) {
   const [number, setNumber] = React.useState(0)
