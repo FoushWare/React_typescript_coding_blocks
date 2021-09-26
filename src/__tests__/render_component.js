@@ -1,18 +1,22 @@
 // import React to use JSX
 import React from 'react'
-import ReactDOM from 'react-dom'
-import {getQueriesForElement} from '@testing-library/dom'
+import {render} from '@testing-library/react'
 // import  The thing i wanna test
 import {FavoriteNumber} from '../favorite-number'
+
+//#### Custom Render ... We will replace it with @testing-library/react render
+// function render(ui) {
+// 	const div = document.createElement('div')
+// 	ReactDOM.render(ui, div)
+// 	const queries = getQueriesForElement(div)
+// 	return { ...queries }
+
+// }
+
 test('renders a [number] input with a label "Favorite Number"', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<FavoriteNumber />, div)
-  //####React-dome
-  // expect(div.querySelector('input').type).toBe('number')
-  // expect(div.querySelector('label').textContent).toBe('Favorite Number')
-  // const input = queries.getByLabelText(div, 'Favorite Number')
-  //####Jest-Dom
-  const {getByLabelText} = getQueriesForElement(div)
+  //render
+  const {getByLabelText} = render(<FavoriteNumber />)
+
   const input = getByLabelText('Favorite Number')
   expect(input).toHaveAttribute('type', 'number')
 })
