@@ -4,11 +4,13 @@
       "version":"detect"
     }
   },
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
+
     }
   },
   "extends": ["eslint:recommended", "eslint-config-prettier","plugin:react/recommended"],
