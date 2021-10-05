@@ -39,6 +39,9 @@ test('call reportError and render that there is an Error', () => {
   const info = {componentStack: expect.stringContaining('Bomb')}
   //Check the mocked func called proparly
   expect(mockReportError).toHaveBeenCalledWith(error, info)
+
+  //once for jsdom and once for react-dom
+  expect(console.error).toHaveBeenCalledTimes(2)
 })
 
 // this is only here to make the error output not appear in the project's output
