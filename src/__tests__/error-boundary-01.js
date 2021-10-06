@@ -1,6 +1,7 @@
-import {render} from '@testing-library/react'
+import {render, screen} from '@testing-library/react'
 import {ErrorBoundary} from '../error-boundary'
 import {reportError as mockReportError} from '../api'
+import userEvent from '@testing-library/user-event'
 
 //### Mock api reportError
 jest.mock('../api')
@@ -8,6 +9,7 @@ jest.mock('../api')
 //### after Each test reset ⚙️
 afterEach(() => {
   jest.clearAllMocks()
+  console.error.mockRestore()
 })
 
 //## component to throw error
@@ -39,9 +41,25 @@ test('call reportError and render that there is an Error', () => {
   const info = {componentStack: expect.stringContaining('Bomb')}
   //Check the mocked func called proparly
   expect(mockReportError).toHaveBeenCalledWith(error, info)
-
-  //once for jsdom and once for react-dom
+  expect(screen.getByRole('alert').textContent).toMatchInlineSnapshot(
+    `"There was a problem."`,
+  )
   expect(console.error).toHaveBeenCalledTimes(2)
+
+  console.error.mockClear()
+  mockReportError.mockClear()
+
+  rerender(
+    <ErrorBoundary>
+      <Bomb />
+    </ErrorBoundary>,
+  )
+  //### important : if i didn't do this the state of error not changing so still render error and try agin still in the dom
+  userEvent.click(screen.getByText(/try again/i))
+  expect(mockReportError).not.toHaveBeenCalled()
+  expect(console.error).not.toHaveBeenCalled()
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+  expect(screen.queryByText(/try again/i)).not.toBeInTheDocument()
 })
 
 // this is only here to make the error output not appear in the project's output
@@ -50,6 +68,6 @@ beforeEach(() => {
   jest.spyOn(console, 'error').mockImplementation(() => {})
 })
 
-afterEach(() => {
-  console.error.mockRestore()
-})
+// afterEach(() => {
+//   console.error.mockRestore()
+// })
