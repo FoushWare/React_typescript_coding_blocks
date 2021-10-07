@@ -3,6 +3,10 @@
 /tmp
 /out-tsc
 
+#cypress
+cypress/videos
+cypress/screenshots
+
 # Runtime data
 pids
 *.pid
