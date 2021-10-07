@@ -1,6 +1,6 @@
 describe('anonymous calculator', () => {
   it('can make calculations', () => {
-    cy.visit('http://localhost:9000')
+    cy.visit('/')
       .get('.Vg8TIC_Y51UXScRRk9MR > :nth-child(3)')
       .click()
       .get('.GofTyXI7GJi62IaMkcx2 > :nth-child(4)')
